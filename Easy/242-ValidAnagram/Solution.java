@@ -1,5 +1,24 @@
+import java.util.Arrays;
+
 class Solution {
   public boolean isAnagram(String s, String t) {
+    char[] sA = s.toCharArray();
+    char[] tA = t.toCharArray();
 
+    if (tA.length != sA.length) {
+      return false;
+    }
+
+    Arrays.sort(sA);
+    Arrays.sort(tA);
+
+    s = new String(sA);
+    t = new String(tA);
+
+    if (s.equals(t)) {
+      return true;
+    }
+
+    return false;
   }
 }
